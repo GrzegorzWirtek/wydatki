@@ -4,16 +4,18 @@ import Ham from '../Ham/Ham';
 import { useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import Popup from '../Popup/Popup';
+import About from '../About/About';
 
 const POPUP_TEXT = [
-	'Czy na pewno chcesz zresetować wszystkie wydatki?',
-	'Czy na pewno chcesz usunąć użytkowników?',
+	'Czy na pewno chcesz usunąć wszystkie wydatki?',
+	'Czy na pewno chcesz usunąć użytkowników i ich wydatki?',
 ];
 
 const Nav = () => {
 	const [navVisible, setNavVisible] = useState(false);
 	const [popupVisible, setPopupVisible] = useState(false);
 	const [popupType, setPopupType] = useState(0);
+	const [aboutVisible, setAboutVisible] = useState(false);
 
 	const { dispatch } = useContext(AppContext);
 
@@ -46,6 +48,10 @@ const Nav = () => {
 		setPopupVisible(false);
 	};
 
+	const handleAboutClose = () => {
+		setAboutVisible(false);
+	};
+
 	return (
 		<>
 			{popupVisible ? (
@@ -55,6 +61,8 @@ const Nav = () => {
 					cancel={handleCancel}
 				/>
 			) : null}
+
+			{aboutVisible ? <About close={handleAboutClose} /> : null}
 			<nav className='nav'>
 				<Ham click={handleHamClick} navVisible={navVisible} />
 				<ul
@@ -74,9 +82,11 @@ const Nav = () => {
 							setPopupType(1);
 							handleReset();
 						}}>
-						Usuń użytkowników
+						Resetuj użytkowników
 					</li>
-					<li className='nav__li'>O aplikacji</li>
+					<li className='nav__li' onClick={() => setAboutVisible(true)}>
+						O aplikacji
+					</li>
 				</ul>
 			</nav>
 		</>

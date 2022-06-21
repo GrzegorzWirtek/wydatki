@@ -22,14 +22,16 @@ const AddExpense: React.FC<{
 		personName: string | undefined,
 	) => {
 		e.preventDefault();
-
+		const date = new Date().toLocaleString().replace(',', '').slice(0, -3);
+		console.log(date);
 		dispatch({
 			type: person === 'ONE' ? `ADD_AMOUNT_ONE` : 'ADD_AMOUNT_TWO',
 			payload: {
-				id: Math.floor(Math.random() * 100),
+				id: Date.now(),
 				person: personName,
 				title: textRef.current!.value,
 				amount: parseFloat(numberRef.current!.value),
+				date,
 			},
 		});
 		setIsFormVisible(false);
@@ -50,13 +52,14 @@ const AddExpense: React.FC<{
 					<h2 className='add-expenses__person-name'>{personName}</h2>
 					<input
 						required={true}
-						// ref={textRef}
+						placeholder='Tytuł'
 						ref={textRef}
 						type='text'
 						className='add-expense__title'
 					/>
 					<input
 						required={true}
+						placeholder='Kwota'
 						ref={numberRef}
 						type='number'
 						className='add-expense__amount'

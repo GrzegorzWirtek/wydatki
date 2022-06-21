@@ -1,7 +1,6 @@
 import { ACTION_TYPE, initialStateType } from './types';
 
 const appReducer = (state: initialStateType, action: ACTION_TYPE) => {
-	console.log(action, 'action to');
 	switch (action.type) {
 		case 'ADD_PERSONS':
 			return {
@@ -30,6 +29,7 @@ const appReducer = (state: initialStateType, action: ACTION_TYPE) => {
 								id: action.payload.id,
 								title: action.payload.title,
 								amount: action.payload.amount,
+								date: action.payload.date,
 							},
 						],
 					},
@@ -48,6 +48,7 @@ const appReducer = (state: initialStateType, action: ACTION_TYPE) => {
 								id: action.payload.id,
 								title: action.payload.title,
 								amount: action.payload.amount,
+								date: action.payload.date,
 							},
 						],
 					},

@@ -9,6 +9,7 @@ type expensesType =
 			id: number;
 			title: string;
 			amount: number;
+			date: string;
 	  }[]
 	| undefined;
 
@@ -34,22 +35,22 @@ const Main = () => {
 		const difference = sumPersonOne / 2 - sumPersonTwo / 2;
 		comment = `${
 			persons?.personTwo.name
-		} zwraca: ${difference}zł użytkownikowi ${
+		} zwraca ${difference}zł użytkownikowi ${
 			persons?.personOne.name
 		}. Wtedy każdy poniesie koszt ${sumPersonOne - difference}zł`;
 	} else if (sumPersonOne < sumPersonTwo) {
 		const difference = sumPersonTwo / 2 - sumPersonOne / 2;
-		comment = `Użytkownik ${
+		comment = `${
 			persons?.personOne.name
-		} powinien oddać użytkownikowi ${
+		} zwraca ${difference}zł użytkownikowi ${
 			persons?.personTwo.name
-		} ${difference}zł. Wtedy każdy poniesie koszt ${
-			sumPersonTwo - difference
-		}zł`;
+		}. Wtedy każdy poniesie koszt ${sumPersonTwo - difference}zł`;
 	}
 
 	const expensesItems = (
-		exp: { id: number; title: string; amount: number }[] | undefined,
+		exp:
+			| { id: number; title: string; amount: number; date: string }[]
+			| undefined,
 	): JSX.Element[] | undefined => {
 		return exp?.map((item) => (
 			<Expense
@@ -57,6 +58,7 @@ const Main = () => {
 				id={item.id}
 				title={item.title}
 				amount={item.amount}
+				date={item.date}
 			/>
 		));
 	};

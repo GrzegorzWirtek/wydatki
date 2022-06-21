@@ -5,11 +5,11 @@ export type initialStateType = {
 	persons?: {
 		personOne: {
 			name: string;
-			expenses?: { id: number; title: string; amount: number }[];
+			expenses?: { id: number; title: string; amount: number; date: string }[];
 		};
 		personTwo: {
 			name: string;
-			expenses?: { id: number; title: string; amount: number }[];
+			expenses?: { id: number; title: string; amount: number; date: string }[];
 		};
 	};
 };
@@ -30,6 +30,7 @@ export type ACTION_TYPE =
 				person: string | undefined;
 				title: string;
 				amount: number;
+				date: string;
 			};
 	  }
 	| {
@@ -39,6 +40,7 @@ export type ACTION_TYPE =
 				person: string | undefined;
 				title: string;
 				amount: number;
+				date: string;
 			};
 	  }
 	| {
