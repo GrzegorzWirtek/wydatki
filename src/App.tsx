@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Nav from './components/Nav/Nav';
+import Form from './components/Form/Form';
+import Main from './components/Main/Main';
+import AppContext from './context/AppContext';
+import { useContext } from 'react';
+
+// {
+//   isStart: true,
+//   persons: {
+//     personOne: {
+//       name: 'Gosia',
+//       expenses: [{ title: 'Reastauracja', amount: 26 }],
+//     },
+//     personTwo: {
+//       name: 'Grzesiek',
+//       expenses: [{ title: 'Bar', amount: 210 }],
+//     },
+//   },
+// },
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const { state } = useContext(AppContext);
+	const content = state.isStart ? (
+		<Form />
+	) : (
+		<>
+			<Nav />
+			<Main />
+		</>
+	);
+
+	return <div className='App'>{content}</div>;
 }
 
 export default App;

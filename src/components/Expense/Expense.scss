@@ -1,0 +1,15 @@
+
+.expense{
+  background-color: rgb(176, 176, 211);
+  margin: 10px;
+
+ 
+  &__remove{
+    display: none;
+  }
+
+  &:hover > .expense__remove{
+    display: block;
+  }
+
+}
