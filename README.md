@@ -18,6 +18,7 @@ Project is created with:
 - **react-dom** version 18.2.0
 - **react-scripts** version 5.0.1
 - **sass** version 1.52.3
+- **gh-pages** version 4.0.0
 
 ## Setup
 
