@@ -1,16 +1,108 @@
+@import '../../sass/variables.scss';
 
+.add-expense__button{
+  margin-left: $main-margin-horizontal - 3px;
+  margin-right: $main-margin-horizontal - 3px;
+  margin-top: 10px;
+  height: $main-button-height;
+  outline: none;
+  border: none;
+  font-size: $font-size-m;
+  font-weight: 600;
+  background-color: $main-header-bcg-color;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover{
+    background-color: lighten($main-header-bcg-color, 10%);
+  }
+
+  &--right{
+    background-color: $main-header-bcg-color-r;
+
+    &:hover{
+      background-color: lighten($main-header-bcg-color-r, 10%);
+    }
+  }
+}
 
 .add-expense{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background-color: $popup-color;
+  z-index: 4;
 
-  &__form{
-    position: fixed;
+  @media(min-width:$min-width){
+    max-width: $max-width;
     top: 50%;
     left: 50%;
+    bottom: auto;
+    right: auto;
     transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: rgb(214, 214, 184);
-    z-index: 1;
+    width: 800px;
+    padding: 30px;
+    -webkit-box-shadow: 6px 6px 27px -2px rgba(40, 40, 45, 0.85);
+    -moz-box-shadow: 6px 6px 27px -2px rgba(40, 40, 45, 0.85);
+    box-shadow: 6px 6px 27px -2px rgba(40, 40, 45, 0.85);
   }
+
+  &__person-name{
+    margin-bottom: 10px;
+    font-size: $font-size-xl;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  &__title, &__amount{
+    width: 100%;
+    padding: 5px 8px;
+    outline: none;
+    font-size: $font-size-l;
+    margin-bottom: 10px;
+    outline: none;
+    border: 1px solid $border-color;
+    resize: none;
+  }
+
+  &__submit, &__cancel{
+    height: $main-button-height;
+    margin-top: 15px;
+    outline: none;
+    border: none;
+    font-size: $font-size-m;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  &__submit{
+    background-color: $submit-btn-color;
+
+    &:hover{
+      background-color: lighten($submit-btn-color, 10%);
+    }
+  }
+
+  &__cancel{
+    background-color: $cancel-btn-color;
+
+    &:hover{
+      background-color: lighten($cancel-btn-color, 10%);
+    }
+  }
+}
+
+.span--bold{
+  font-size: $font-size-xl;
+  font-weight: 600;
 }

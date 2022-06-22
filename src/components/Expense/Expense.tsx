@@ -38,7 +38,7 @@ const Expense: React.FC<{
 			<div className='expense'>
 				<p className='expense__title'>{title}</p>
 				<p className='expense__amount'>{amount}</p>
-				<p className='expenses__date'>{date}</p>
+				<p className='expense__date'>{date}</p>
 				<div className='expense__button-wrapper'>
 					<button
 						className='expense__remove'

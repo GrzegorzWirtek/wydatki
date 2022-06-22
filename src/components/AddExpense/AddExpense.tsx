@@ -7,7 +7,7 @@ const AddExpense: React.FC<{
 	person: string;
 }> = ({ personName, person }) => {
 	const { dispatch } = useContext(AppContext);
-	const textRef = useRef<HTMLInputElement | null>(null);
+	const textRef = useRef<HTMLTextAreaElement | null>(null);
 	const numberRef = useRef<HTMLInputElement | null>(null);
 
 	const [isFormVisible, setIsFormVisible] = useState(false);
@@ -47,14 +47,16 @@ const AddExpense: React.FC<{
 		<>
 			{isFormVisible ? (
 				<form
-					className='add-expense__form'
+					className='add-expense'
 					onSubmit={(e) => handleSubmit(e, person, personName)}>
-					<h2 className='add-expenses__person-name'>{personName}</h2>
-					<input
+					<h2 className='add-expense__person-name'>
+						Nowy wydatek - <span className='span--bold'>{personName}</span>
+					</h2>
+					<textarea
 						required={true}
 						placeholder='Tytuł'
+						cols={2}
 						ref={textRef}
-						type='text'
 						className='add-expense__title'
 					/>
 					<input
@@ -76,7 +78,11 @@ const AddExpense: React.FC<{
 				</form>
 			) : null}
 
-			<button className='add-expense' onClick={() => setIsFormVisible(true)}>
+			<button
+				className={`add-expense__button ${
+					person === 'TWO' ? 'add-expense__button--right' : ''
+				}`}
+				onClick={() => setIsFormVisible(true)}>
 				Dodaj wydatek
 			</button>
 		</>

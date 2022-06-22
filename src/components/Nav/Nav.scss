@@ -1,7 +1,4 @@
-$nav-li-margin: 20px;
-$min-width: 800px;
-$nav-transition-time: 0.2s;
-$nav-mobile-bcg-color: rgb(240, 240, 167);
+@import '../../sass/variables.scss';
 
 .nav{
   position: relative;
@@ -40,7 +37,60 @@ $nav-mobile-bcg-color: rgb(240, 240, 167);
   }
 
   &__li{
-    margin: 0 $nav-li-margin;
+    margin: 12px $nav-li-margin;
     cursor: pointer;
+    font-size: $font-size-xl;
+    text-align: center;
+    font-weight: 600;
+    transition: 0.2s;
+
+    &:hover{
+      color: lighten(black, 40%);
+    }
+
+    &:nth-child(1){
+      color: $nav-important-color;
+      margin-top: 20px;
+
+      &:hover{
+        color: lighten($nav-important-color, 20%);
+      }
+
+      @media (min-width: $min-width){
+        margin: 30px 15px;
+        font-size: $font-size-m;
+      }
+    }
+    
+    @media (min-width: $min-width){
+      margin: 30px 15px;
+      font-size: $font-size-m;
+    }
+  }
+
+  &__icons{
+    width: 60%;
+    margin: 0 auto;
+    height: 35px;
+    text-align: center;
+
+    &::before{
+      display: block;
+      content: '';
+      height: 1px;
+      width: 200px;
+      margin: 0 auto;
+      background-color: $border-color;
+      margin-bottom: 15px;
+    }
+
+    @media (min-width: $min-width){
+      display: none;
+    }
+  }
+
+  &__icon{
+    height: 100%;
+    margin: 0 9px;
   }
 }

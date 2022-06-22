@@ -25,18 +25,18 @@ const Form = () => {
 
 	return (
 		<form className='form' onSubmit={handleSubmit}>
-			<p className='form__title'>Wpisz imiona</p>
+			<p className='form__title'>Dodaj użytkowników</p>
 			<input
 				ref={personOneRef}
 				type='text'
-				className='form__input form__input-one'
+				className='form__input'
 				required={true}
 				placeholder='Osoba 1'
 			/>
 			<input
 				ref={personTwoRef}
 				type='text'
-				className='form__input form__input-two'
+				className='form__input'
 				required={true}
 				placeholder='Osoba 2'
 			/>

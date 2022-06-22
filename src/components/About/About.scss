@@ -1,4 +1,4 @@
-
+@import '../../sass/variables.scss';
 
 .about{
   position: fixed;
@@ -6,20 +6,91 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.792);
-  background-color: blue;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding: 0 20px;
+  background-color: $about-bcg-color;
+  color: white;
   z-index: 5;
+  opacity: 0;
+  animation: show 0.4s forwards;
 
+  @media(min-width:$min-width){
+    padding: 0 10vw;
+  }
+
+  &__title{
+    font-size: $font-size-l;
+    flex-basis: 100%;
+    max-width: $max-width;
+    text-align: center;
+  }
+
+  &__description{
+    flex-basis: 100%;
+    text-align: center;
+    margin: 10px auto;
+    font-size: $font-size-m;
+      max-width: $max-width;
+  }
+
+  &__name{
+    font-size: $font-size-sm;
+      max-width: $max-width;
+      flex-basis: 100%;
+      text-align: center;
+
+    &::before{
+      display: block;
+      content: '';
+      height: 1px;
+      background-color: white;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__icons{
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    height: 30px;
+  }
+
+  &__icon{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    filter: invert(100%) sepia(1%) saturate(7498%) hue-rotate(133deg) brightness(110%) contrast(101%);
+
+    &--in{
+      transform: translateY(-1px);
+    }
+  }
 
   &__close{
     position: absolute;
     top: 20px;
     right: 20px;
-    background-image: url('../../../public/cancel.svg');
+    background: url('../../../public/cancel.svg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    outline: none;
+    border: none;
+    filter: invert(100%) sepia(1%) saturate(5232%) hue-rotate(19deg) brightness(115%) contrast(100%);
+    cursor: pointer;
+  }
+}
+
+@keyframes show {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }

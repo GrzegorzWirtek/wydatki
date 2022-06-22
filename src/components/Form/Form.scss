@@ -1,0 +1,40 @@
+@import '../../sass/variables.scss';
+
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 90vw;
+  max-width: 600px;
+
+  &__title{
+    font-size: $font-size-xl;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  &__input{
+    width: 100%;
+    padding: 5px 8px;
+    outline: none;
+    font-size: $font-size-l;
+    margin-bottom: 15px;
+    outline: none;
+    border: 1px solid $border-color;
+    resize: none;
+  }
+
+  &__button{
+    outline: none;
+    border: none;
+    height: $main-button-height;
+    width: 100%;
+    background-color: $submit-btn-color;
+    font-size: $font-size-m;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+  }
+}

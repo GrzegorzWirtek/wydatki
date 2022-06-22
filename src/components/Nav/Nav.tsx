@@ -82,11 +82,25 @@ const Nav = () => {
 							setPopupType(1);
 							handleReset();
 						}}>
-						Resetuj użytkowników
+						Usuń użytkowników
 					</li>
 					<li className='nav__li' onClick={() => setAboutVisible(true)}>
 						O aplikacji
 					</li>
+
+					<div className='nav__icons'>
+						<a
+							href='https://github.com/GrzegorzWirtek?tab=repositories'
+							target='blank'>
+							<img src='gh.svg' alt='github icon' className='nav__icon' />
+						</a>
+						<a href='https://www.facebook.com/grzegorz.wirtek/' target='blank'>
+							<img src='fb.svg' alt='facebook icon' className='nav__icon' />
+						</a>
+						<a href='https://www.instagram.com/grzegorz.wirtek/' target='blank'>
+							<img src='in.svg' alt='instagram icon' className='nav__icon' />
+						</a>
+					</div>
 				</ul>
 			</nav>
 		</>

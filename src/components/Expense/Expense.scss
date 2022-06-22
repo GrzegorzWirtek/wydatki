@@ -1,19 +1,52 @@
+@import '../../sass/variables.scss';
 
 .expense{
   position: relative;
-  background-color: rgb(176, 176, 211);
-  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 5px 10px 5px;
+  padding: 6px;
+  background-color: $expense-bcg-color;
+  -webkit-box-shadow: 4px 4px 10px -6px rgba(43, 43, 47, 1);
+  -moz-box-shadow: 4px 4px 10px -6px rgba(43, 43, 47, 1);
+  box-shadow: 4px 4px 10px -6px rgba(43, 43, 47, 1);
 
- 
+  &__title{
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 80%;
+  }
+
+  &__amount{
+    flex-grow: 1;
+    justify-self: flex-end;
+    font-size: $font-size-m;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-weight: 500;
+  }
+
+  &__date{
+    flex-basis: 100%;
+    font-size: $font-size-s;
+    text-align: right;
+    margin-top: 8px;
+  }
+
   &__remove{
     position: absolute;
     top: 5px;
     right: 5px;
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
     background: url('../../../public/cancel.svg');
     background-repeat: no-repeat;
     background-size: cover;
+    outline: none;
+    border: none;
     filter: invert(100%) sepia(1%) saturate(5232%) hue-rotate(19deg) brightness(115%) contrast(100%);
     cursor: pointer;
   }
@@ -24,13 +57,22 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.637);
+    background-color: $expense-delete-wrapper-color;
     display: none;
   }
 
   &:hover > .expense__button-wrapper{
     display: block;
+    opacity: 0;
+    animation: show 0.2s forwards;
+  }
+}
+
+@keyframes show {
+  from{
+    opacity: 0;
+  }
+  to{
     opacity: 1;
-    transition-delay:1s;
   }
 }

@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html{
+  font-family: 'Anek Latin', sans-serif;
+  font-size: 14px;
+}
+
+a, p, h1, h2, h3, span, input, textarea, button{
+  font-family: 'Inter', sans-serif;
+  line-height: 1.2;
+  font-weight: 400;
+  font-size: 1rem;
+  font-family: 'Anek Latin', sans-serif;
 }

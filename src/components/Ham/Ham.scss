@@ -1,15 +1,9 @@
-$min-width: 800px;
-$ham-width: 38px;
-$ham-height: 24px;
-$ham-item-height: 2px;
-$ham-item-color: black;
-$ham-transition-time: 0.2s;
-$ham-transform-px: 18px;
+@import '../../sass/variables.scss';
 
 .ham{
   position: fixed;
-  right: 40px;
-  top: 40px;
+  right: $ham-margin-right;
+  top: $ham-margin-top;
   width: $ham-width;
   height: $ham-height;
   display: flex;
