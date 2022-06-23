@@ -13,12 +13,14 @@ const Form = () => {
 	}, []);
 
 	const handleSubmit = (e: React.FormEvent) => {
+		const personOne = personOneRef.current!.value.replace(/\s+$/, '');
+		const personTwo = personTwoRef.current!.value.replace(/\s+$/, '');
 		e.preventDefault();
 		dispatch({
 			type: 'ADD_PERSONS',
 			payload: {
-				personOne: personOneRef.current!.value,
-				personTwo: personTwoRef.current!.value,
+				personOne,
+				personTwo,
 			},
 		});
 	};

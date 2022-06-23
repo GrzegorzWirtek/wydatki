@@ -20,10 +20,11 @@
     padding: 5px 8px;
     outline: none;
     font-size: $font-size-l;
-    margin-bottom: 15px;
+    height: $main-button-height;
+    margin-bottom: 10px;
     outline: none;
     border: 1px solid $border-color;
-    resize: none;
+    resize: none; 
   }
 
   &__button{

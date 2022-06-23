@@ -48,7 +48,7 @@ const Main = () => {
 				zwraca <span className='main__span--bolder'>{difference}</span>zł
 				użytkownikowi{' '}
 				<span className='main__span--bold'>{persons?.personOne.name}</span>.
-				Wtedy każdy poniesie koszt{' '}
+				Każdy poniesie koszt{' '}
 				<span className='main__span--bold'>{sumPersonOne - difference}</span>zł.
 			</>
 		);
@@ -60,7 +60,7 @@ const Main = () => {
 				zwraca <span className='main__span--bolder'>{difference}</span>zł
 				użytkownikowi{' '}
 				<span className='main__span--bold'>{persons?.personTwo.name}</span>.
-				Wtedy każdy poniesie koszt{' '}
+				Każdy poniesie koszt{' '}
 				<span className='main__span--bold'>{sumPersonTwo - difference}</span>zł.
 			</>
 		);

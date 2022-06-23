@@ -59,8 +59,9 @@
     text-align: center;
     line-height: 1.4;
     font-weight: 400;
-    border: 2px solid rgba(0, 0, 0, 0.637);
-    background-color: $comment-bcg-color;
+    border: 4px solid;
+    border-image: linear-gradient(90deg, $main-header-bcg-color, $main-header-bcg-color-r) 1;
+    background-color: $expense-bcg-color;
     -webkit-box-shadow: 4px 4px 10px -6px rgba(43, 43, 47, 1);
     -moz-box-shadow: 4px 4px 10px -6px rgba(43, 43, 47, 1);
     box-shadow: 4px 4px 10px -6px rgba(43, 43, 47, 1);
